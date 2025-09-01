@@ -1,0 +1,37 @@
+{
+  "name": "fastify-decorators",
+  "version": "1.0.0",
+  "description": "Fastify-decorators getting started",
+  "keywords": [
+    "Node",
+    "Typescript",
+    "Fastify",
+    "Decorators"
+  ],
+  "homepage": "https://github.com/Nunes-ND/fastify-decorators#readme",
+  "bugs": {
+    "url": "https://github.com/Nunes-ND/fastify-decorators/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Nunes-ND/fastify-decorators.git"
+  },
+  "license": "ISC",
+  "author": "Gilson Nunes",
+  "type": "commonjs",
+  "main": "dist/main.js",
+  "scripts": {
+    "test": "vitest",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.2",
+    "@types/node": "^24.3.0",
+    "husky": "^9.1.7",
+    "tsx": "^4.20.5",
+    "typescript": "^5.9.2",
+    "ultracite": "^5.2.17",
+    "vite-tsconfig-paths": "^5.1.4",
+    "vitest": "^3.2.4"
+  }
+}

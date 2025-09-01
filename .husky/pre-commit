@@ -1,0 +1,5 @@
+echo "Running pre-commit checks with Ultracite..."
+
+npx ultracite lint
+
+echo "Pre-commit checks passed."
