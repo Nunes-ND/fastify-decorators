@@ -21,17 +21,42 @@
   "type": "commonjs",
   "main": "dist/main.js",
   "scripts": {
+    "start": "node dist/main.js",
+    "dev": "tsx --env-file .env --watch src/main.ts",
     "test": "vitest",
+    "build": "tsc -p tsconfig.prod.json",
+    "dev:typeorm:sync": "tsx node_modules/typeorm/cli.js schema:sync -d ./datasource.ts",
+    "typeorm:schema:log": "tsx node_modules/typeorm/cli.js schema:log -d ./datasource.ts",
+    "dev:typeorm:seed:run": "tsx --env-file .env src/database/seeds/seed.ts",
+    "dev:typeorm:drop": "tsx node_modules/typeorm/cli.js schema:drop -d ./datasource.ts",
+    "typeorm:query": "tsx node_modules/typeorm/cli.js query -d ./datasource.ts",
+    "typeorm:entity:create": "tsx node_modules/typeorm/cli.js entity:create",
+    "typeorm:subscriber:create": "tsx node_modules/typeorm/cli.js subscriber:create",
+    "typeorm:migration:create": "tsx node_modules/typeorm/cli.js migration:create --esm",
+    "typeorm:migration:generate": "tsx node_modules/typeorm/cli.js migration:generate -d ./datasource.ts -p --esm",
+    "typeorm:migration:run": "tsx --env-file .env node_modules/typeorm/cli.js migration:run -d ./datasource.ts",
+    "typeorm:migration:show": "tsx node_modules/typeorm/cli.js migration:show -d ./datasource.ts",
+    "typeorm:migration:revert": "tsx node_modules/typeorm/cli.js migration:revert -d ./datasource.ts",
+    "typeorm:cache:clear": "tsx node_modules/typeorm/cli.js cache:clear -d ./datasource.ts",
     "prepare": "husky"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.2.2",
+    "@faker-js/faker": "^10.0.0",
     "@types/node": "^24.3.0",
     "husky": "^9.1.7",
     "tsx": "^4.20.5",
+    "typeorm-extension": "^3.7.1",
     "typescript": "^5.9.2",
     "ultracite": "^5.2.17",
     "vite-tsconfig-paths": "^5.1.4",
     "vitest": "^3.2.4"
+  },
+  "dependencies": {
+    "better-sqlite3": "^12.2.0",
+    "fastify": "^4.29.1",
+    "fastify-decorators": "^3.16.1",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.26"
   }
 }
